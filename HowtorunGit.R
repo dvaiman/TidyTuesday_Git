@@ -18,3 +18,7 @@ edit_r_environ()
 # restart R (in session tab)
 
 use_github("https", auth_token = Sys.getenv("GITHUB_PAT"))
+
+
+# run this to create reposatory on github
+use_github()
