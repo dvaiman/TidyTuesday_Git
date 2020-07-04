@@ -4,6 +4,9 @@
 
 
 
+# to reset to certain version: go to "Terminal" select " new terminal" and then write
+# git reset --hard (SHA goes inside here instead of the brackets and this text, find it in commit and history tab)
+
 # Make syncing easier with usethis
 library(usethis)
 
@@ -22,3 +25,4 @@ use_github("https", auth_token = Sys.getenv("GITHUB_PAT"))
 
 # run this to create reposatory on github
 use_github()
+
