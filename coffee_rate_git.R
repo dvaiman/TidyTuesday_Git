@@ -10,15 +10,11 @@ library(ggtext)
 
 coffee_ratings <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-07/coffee_ratings.csv')
 
-
+# rename countries
 coffee_ratings$country_of_origin[coffee_ratings$country_of_origin == "United States (Puerto Rico)"] <- 'United States'
 coffee_ratings$country_of_origin[coffee_ratings$country_of_origin == "United States (Hawaii)"] <- 'United States'
 coffee_ratings$country_of_origin[coffee_ratings$country_of_origin == "Tanzania, United Republic Of"] <- 'Tanzania'
 coffee_ratings$country_of_origin[coffee_ratings$country_of_origin == "Cote d?Ivoire"] <- 'Cote d\'Ivoire'
-
-
-
-
 
 coffee <- coffee_ratings %>% 
   select(total_cup_points, species, country_of_origin, aroma:moisture) %>% 
@@ -30,6 +26,7 @@ coffee <- coffee_ratings %>%
   mutate(country_of_origin1 = ifelse(total_cup_points < 0, NA, country_of_origin)) %>% 
   mutate(country_of_origin2 = ifelse(total_cup_points > 0, NA, country_of_origin)) %>% 
   mutate(country_of_origin = fct_reorder(country_of_origin, total_cup_points))  %>% 
+  # Plot
   ggplot(aes(x = total_cup_points, y =country_of_origin)) + 
   geom_point(aes(size = count, color= total_cup_points > 0), shape = 18) +
   geom_segment(aes( xend =0, yend=country_of_origin, color= total_cup_points > 0),size=0.5) +
