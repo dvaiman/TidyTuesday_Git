@@ -1,5 +1,5 @@
 
-# Coffee ratings around the worls
+# Coffee ratings around the world
 
 # Libraries
 library(tidyverse)
