@@ -45,3 +45,7 @@ TidyTuesday_Git.Rproj
 
 # mac ds store files
 .DS_Store
+
+
+#ignore markdown readme
+README.rmd
