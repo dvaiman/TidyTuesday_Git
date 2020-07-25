@@ -9,6 +9,7 @@ library(sf)
 library(patchwork)
 library(ggrepel)
 library(ggtext)
+library(here)
 
 
 
@@ -211,7 +212,7 @@ highly populated states of Victoria, New South Wales and Queensland\n\n",
   theme(plot.background = element_rect(fill = "#8DB6CD"))
 
 
-ggsave("australia_animals.png", width = 10, height =11, dpi = 300)
+ggsave(here("2020", "week_30", "australia_animals.png"), width = 10, height =11, dpi = 300)
 
 
 # get count of different animals

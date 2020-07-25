@@ -7,6 +7,7 @@ library(gganimate)
 library(tidyverse)
 library(ggtext)
 library(ggdark)
+library(here)
 
 # load datasets
 tt_output <- tt_load("2020-06-30")
@@ -15,6 +16,15 @@ character_visualization <- tt_output$character_visualization
 locations <- tt_output$locations
 characters <- tt_output$characters
 xmen_bechdel <- tt_output$xmen_bechdel
+
+# or
+
+comic_bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-06-30/comic_bechdel.csv')
+character_visualization <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-06-30/character_visualization.csv')
+characters <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-06-30/characters.csv')
+xmen_bechdel <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-06-30/xmen_bechdel.csv')
+locations <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-06-30/locations.csv')
+
 
 # Cumaulative % of depicted characters
 
@@ -78,4 +88,4 @@ p <- a %>% group_by(costume) %>%
 animate(p, 100, fps = 10, duration = 45, width = 800, height = 600)
 
 # save last made animation
-anim_save("x_men.gif_v")
+anim_save(here("2020", "week_27", "x_men.gif_v"))

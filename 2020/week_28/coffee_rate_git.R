@@ -5,6 +5,7 @@
 library(tidyverse)
 library(ggthemes)
 library(ggtext)
+library(here)
 
 
 
@@ -69,5 +70,5 @@ coffee <- coffee_ratings %>%
   )
 
 
-ggsave("coffee_ratings.tiff", width = 235, height = 165, dpi = 400, units = "mm")
+ggsave(here("2020", "week_28", "coffee_ratings.png"), width = 235, height = 165, dpi = 400, units = "mm")
 

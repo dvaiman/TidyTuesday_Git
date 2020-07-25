@@ -5,6 +5,7 @@
 library(tidyverse)
 library(ggalluvial)
 library(ggimage)
+library(here)
 
 # Data
 astronauts <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-14/astronauts.csv')
@@ -109,5 +110,5 @@ p <- astronauts1%>%
 ggbackground(p, background = image_background2)
 
 
-ggsave("occupations_in_space.png", device = "png", dpi = 300, width = 210, height = 130, units = "mm")
+ggsave(here("2020", "week_29", "occupations_in_space.png"), device = "png", dpi = 300, width = 210, height = 130, units = "mm")
 
