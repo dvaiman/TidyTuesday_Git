@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# tidytuesday <a href='https://github.com/rfordatascience/tidytuesday' target='_blank'><img src='https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/static/tt_logo.png' align="right" height="139" /></a>
+<a href='https://github.com/rfordatascience/tidytuesday' target='_blank'><img src='https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/static/tt_logo.png' align="center"  /></a>
 
 ## week 30 -2020
 
