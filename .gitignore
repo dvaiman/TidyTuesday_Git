@@ -42,3 +42,6 @@ vignettes/*.pdf
 *.knit.md
 .Rproj.user
 TidyTuesday_Git.Rproj
+
+# mac ds store files
+.DS_Store
