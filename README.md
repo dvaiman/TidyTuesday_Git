@@ -3,6 +3,10 @@
 
 <a href='https://github.com/rfordatascience/tidytuesday' target='_blank'><img src='https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/static/tt_logo.png' align="center"  /></a>
 
+## week 31 -2020 🐧
+
+<a href='2020/week_31/penguins.R' target='_blank'><img src="2020/week_31/penguinplot.png" align="center"/></a>
+
 ## week 30 -2020 😺
 
 <a href='2020/week_30/australian_animals.R' target='_blank'><img src="2020/week_30/australia_animals.png" align="center"/></a>

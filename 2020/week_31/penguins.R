@@ -1,4 +1,5 @@
-
+# Author: Daniel Väisänen
+# TidyTuesday week 31 -Penguins
 
 library(tidyverse)
 library(visdat)
@@ -11,8 +12,6 @@ library(here)
 library(extrafont)
 # data
 penguins <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv')
-
-
 
 
 
@@ -45,6 +44,7 @@ d <- penguins %>% filter(year==2009) %>%
   annotate("text", y=3,  x= "Biscoe", label= "Biscoe", color = "#53868B", family = "Oswald")+
   scale_fill_manual(values = c("#009ACD", "#869BB1", "#68829E")) +
   scale_y_reverse()+
+  labs(caption = "Source: Dr. Kristen Gorman and the Palmer penguins | Graphics: Daniel Väisänen") +
   theme_minimal(base_family = "Oswald") +
   theme(legend.position = c(0.2,0.3),
         axis.title = element_blank(),
