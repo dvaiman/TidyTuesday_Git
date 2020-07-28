@@ -1,15 +1,16 @@
 # Author: Daniel Väisänen
-# TidyTuesday week 31 -Penguins
+# TidyTuesday week 31 
+# Penguins
 
 library(tidyverse)
 library(visdat)
 library(cowplot)
 library(ggrepel)
-library(ggplot2) # For graphing
-library(mapproj) # For the polar orthographic map projection
-library(ggthemes) # For theme_map()
+library(mapproj) # polar orthographic map projection
+library(ggthemes) 
 library(here)
 library(extrafont)
+
 # data
 penguins <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv')
 
