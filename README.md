@@ -9,11 +9,11 @@
 
 ## week 30 -2020 😺
 
-<a href='2020/week_30/australian_animals.R' target='_blank'><img src="2020/week_30/australia_animals.png" align="center"/></a>
+<a href='2020/week_30/austrailian_animals.R' target='_blank'><img src="2020/week_30/australia_animals.png" align="center"/></a>
 
 ## week 29 -2020 🚀
 
-<a href='2020/week_29/Astronauts.R' target='_blank'><img src="2020/week_29/occupations_in_space.png" align="center"/></a>
+<a href='2020/week_29/Astronouts.R' target='_blank'><img src="2020/week_29/occupations_in_space.png" align="center"/></a>
 
 ## week 28 -2020 💩
 
