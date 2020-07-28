@@ -17,7 +17,7 @@
 
 ## week 28 -2020 💩
 
-<a href='2020/week_28/coffee_ratings_git.R' target='_blank'><img src="2020/week_28/coffee_ratings.png" align="center"/></a>
+<a href='2020/week_28/coffee_rate_git.R' target='_blank'><img src="2020/week_28/coffee_ratings.png" align="center"/></a>
 
 ## week 27 -2020 💪
 
