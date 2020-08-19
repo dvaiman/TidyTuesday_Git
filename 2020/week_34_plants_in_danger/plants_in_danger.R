@@ -1,10 +1,10 @@
 
-
-# week 34 2020- Plants in Danger
+# TidyTuesday
+# week 34 2020
+# Plants in Danger
 # Daniel VÄisänen
 
 
-install.packages("tibble")
 library(tidyverse)
 library(ggforce)
 library(patchwork)
@@ -50,8 +50,8 @@ a <- threats %>% count(year_last_seen, continent, red_list_category) %>%
   theme_void() +
   theme(
     plot.background = element_rect(fill="ivory", color = "ivory"),
-    strip.text.y.left = element_text(angle = 0, size = 12),
-    strip.text.x = element_text( size = 12),
+    strip.text.y.left = element_text(angle = 0, size = 14),
+    strip.text.x = element_text( size = 14),
     legend.position = "none",
     plot.margin = margin(2, 0, 2, 2)
     )
@@ -74,7 +74,7 @@ p2 <- ggplot() +
   geom_arc(aes(x0 = 0, y0 = -22, r = 6, start = -1.3, end = -5), color="blue", alpha = .0) +
   theme_void() +
   coord_fixed(xlim = c(-25, 25), ylim = c(-70,15), clip = "off") +
-  geom_textbox(aes(x= -25, y = 14, label = "**Size**: Log scaled percentages of\n extinct species"),
+  geom_textbox(aes(x= -25, y = 14, label = "**Size**: Log scaled percentages of\n extinct plants"),
                size = 4,
                fill = NA,
                box.colour = NA,
@@ -88,8 +88,9 @@ p2 <- ggplot() +
                family = "Merienda")+
   geom_textbox(aes(x= -25, y = -50, label = "Major threats to biodiversity, especially in areas of exceptional plant diversity, 
                    primarily in the tropics, are often linked to industrial-scale activities such as timber exploitation or large plantations, 
-                   mining, and agriculture. Continents are sorted on percentage of most extinct plant species. Africa has had the most extinct plants while Europe has the least.
-                   The number one threat to plants is pollution and . Still in 2000-2020 plant species are going extinct."), 
+                   mining, and agriculture.
+                   In this graphic continents are sorted on percentage of most extinct plant species. Africa has had the most extinct plants while Europe has the least.
+                   Still in 2000-2020 plant species are going extinct."), 
                width = unit(5, "inch"),
                color = "black",
                lineheight = 1.7,
@@ -114,18 +115,22 @@ geom_curve(aes(x = 8, y = 8, xend = 20, yend = -20),
 
 p1 + p2  + 
   plot_annotation(title = 'Extinct and Endangered Plants\n',
-                  caption = "Source | Graphics: Daniel Vaisanen",
-                  theme = theme(plot.title = element_text(size = 45, 
+                  caption = "Source: IUCN Red List | Graphics: Daniel Vaisanen",
+                  theme = theme(plot.title = element_text(size = 50, 
                                                           hjust = 0.5, 
                                                           family = "Playfair Display",
                                                           face = "bold"))) & 
   theme(text = element_text('Merienda'),
         plot.background = element_rect(fill="ivory", color = "ivory"),
-        plot.margin = margin(20, 20, 20, 20))
+        plot.margin = margin(20, 30, 20, 30))
 
-ggsave(here("2020/week_34_plants_in_danger/plants.png"), dpi=300, width = 18, height = 12)
+ggsave(here("2020/week_34_plants_in_danger/plants.png"), dpi=300, width = 19, height = 12)
 
 
+
+
+# ==================================================
+# Started on som other plots that are not finished:
 
   library(tidymodels)
   
