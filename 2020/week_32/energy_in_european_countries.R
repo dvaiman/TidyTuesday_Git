@@ -39,7 +39,7 @@ country_totals %>% janitor::clean_names() %>%
   geom_text(aes(x= -4, 
                 y= 160000, 
                 label= "Exports"), 
-            color = "#004b75",
+            color = "#0071b0",
             alpha = 0.2,
             size = 12,
             angle = 0,
@@ -47,7 +47,7 @@ country_totals %>% janitor::clean_names() %>%
   geom_text(aes(x= -4, 
                 y= -160000, 
                 label= "Imports"), 
-            color = "#004b75",
+            color = "#0071b0",
             alpha = 0.2,
             size = 12, 
             angle = 0,
@@ -55,7 +55,7 @@ country_totals %>% janitor::clean_names() %>%
   geom_text(aes(x= 43, 
                 y= -9000, 
                 label= "Total production"), 
-            color = "#004b75",
+            color = "#0071b0",
             alpha = 0.2,
             size = 17, 
             angle = 0,
@@ -113,9 +113,10 @@ country_totals %>% janitor::clean_names() %>%
        caption = "\n\n\nSource: Eurostat | Graphics: Daniel Väisänen") +
   theme_void() +
   theme(plot.margin = unit(c(1,1,1,1), "cm"),
-        plot.background = element_rect(fill="#003f62", color = "#003f62"),
-        panel.background = element_rect(fill="#003f62", color = "#003f62"),
+        plot.background = element_rect(fill="#004c76", color = "#004c76"),
+        panel.background = element_rect(fill="#004c76", color = "#004c76"),
         plot.caption = element_text(angle = 0, vjust = 0.5, hjust = 0.5, family = "Roboto", size = 6)) +
   coord_flip(clip = "off")
 
 ggsave(here("2020", "week_32", "energy_in_european_countries.png"), width = 6.5, height = 8, dpi=300)
+
