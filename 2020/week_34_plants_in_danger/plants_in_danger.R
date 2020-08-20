@@ -21,21 +21,23 @@ threats <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/ti
 
 
 
-
+# Data
 
 a <- threats %>% count(year_last_seen, continent, red_list_category) %>% 
   drop_na(year_last_seen,red_list_category,continent) %>% 
   filter(!year_last_seen == "Before 1900") %>% 
   mutate(red_list_num=case_when(red_list_category == "Extinct" ~ 1,
                    red_list_category == "Extinct in the Wild" ~ 0)) %>% 
+  mutate(Extinct_in_wild_n = ifelse(red_list_category =="Extinct in the Wild",n,0)) %>% # should be NA instead of 0, but makes a nicer visualisation this way
   group_by(red_list_category) %>% 
   mutate(percentage=((n*red_list_num)/sum(n)*100)) %>% 
   mutate(year_last_seen = fct_rev(year_last_seen)) %>% 
-  mutate(continent = fct_reorder(continent, percentage, .desc = TRUE))
+  mutate(continent = fct_reorder(continent, percentage, .desc = TRUE)) 
 
 
+# Plots
 
- p1 <- ggplot(a, aes(fill = continent, alpha = n)) +
+ p1 <- ggplot(a, aes(fill = continent, alpha = Extinct_in_wild_n)) +
   geom_ellipse(aes(x0 = 7, y0 = 0, a = 6, b = 3, angle = 0, m1 = 2),  color = "transparent") + #right
   geom_ellipse(aes(x0 = -7, y0 = 0, a = 6, b = 3, angle = pi, m1 = 2),  color = "transparent") + #left
   geom_ellipse(aes(x0 = 0, y0 = 7, a = 6, b = 3, angle = pi / 2, m1 = 2), color = "transparent") + #top
@@ -44,7 +46,7 @@ a <- threats %>% count(year_last_seen, continent, red_list_category) %>%
   geom_ellipse(aes(x0 = 5, y0 = -5, a = -6, b = 3, angle = 7*pi / 4, m1 = 2),  color = "transparent") + #dia_bottom_right
   geom_ellipse(aes(x0 = -5, y0 = -5, a = -6, b = 3, angle = 5*pi / 4, m1 = 2), color = "transparent") + #dia_bottom_left
   geom_ellipse(aes(x0 = 0, y0 = -7, a = 6, b = 3, angle = 3*pi / 2, m1 = 2),  color = "transparent") + #bottom
-  geom_circle(aes(x0 = 0, y0 = 0, r= log(percentage*10)), fill = "orange", alpha = 1, color = "darkorange") +
+  geom_circle(aes(x0 = 0, y0 = 0, r= log(percentage*10)), fill = "orange", alpha = 1, color = "darkorange") + # center
   coord_fixed(xlim = c(-15, 15)) +
   facet_grid(year_last_seen ~ continent, switch = "y") +
   theme_void() +
@@ -53,7 +55,7 @@ a <- threats %>% count(year_last_seen, continent, red_list_category) %>%
     strip.text.y.left = element_text(angle = 0, size = 14),
     strip.text.x = element_text( size = 14),
     legend.position = "none",
-    plot.margin = margin(2, 0, 2, 2)
+    plot.margin = margin(0, 0, 2, 2)
     )
   
 
@@ -80,7 +82,7 @@ p2 <- ggplot() +
                box.colour = NA,
                hjust = 0,
                family = "Merienda") +
-  geom_textbox(aes(x= 2, y = -25, label = "**Transparance**: amount of\n plants extinct in the wild"),
+  geom_textbox(aes(x= 2, y = -25, label = "**More Transparance**: Lower amount of\n plants extinct in the wild"),
                size = 4,
                fill = NA,
                box.colour = NA,
@@ -110,19 +112,22 @@ geom_curve(aes(x = 8, y = 8, xend = 20, yend = -20),
            color = "gray50", 
            curvature = -0.5) +
   theme(plot.background = element_rect(fill="ivory", color = "ivory"),
-        plot.margin = margin(2, 2, 2, 0))
+        plot.margin = margin(0, 2, 2, 0))
 
+
+# join plots
 
 p1 + p2  + 
-  plot_annotation(title = 'Extinct and Endangered Plants\n',
+  plot_annotation(title = '— Extinct and Endangered Plants —',
                   caption = "Source: IUCN Red List | Graphics: Daniel Vaisanen",
                   theme = theme(plot.title = element_text(size = 50, 
                                                           hjust = 0.5, 
-                                                          family = "Playfair Display",
-                                                          face = "bold"))) & 
+                                                          family = "Playfair Display"))) & 
   theme(text = element_text('Merienda'),
         plot.background = element_rect(fill="ivory", color = "ivory"),
-        plot.margin = margin(20, 30, 20, 30))
+        plot.margin = margin(50, 30, 20, 30))
+
+# save plot
 
 ggsave(here("2020/week_34_plants_in_danger/plants.png"), dpi=300, width = 19, height = 12)
 
