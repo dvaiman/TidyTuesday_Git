@@ -3,11 +3,15 @@
 
 <a href='https://github.com/rfordatascience/tidytuesday' target='_blank'><img src='https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/static/tt_logo.png' align="center"  /></a>
 
-## week 34 -2020 🌷
+## week 35 -2020 🔪
+
+<a href='2020/week_35_chopped/chopped.R' target='_blank'><img src="2020/week_35_chopped/chopped.png" align="center"/></a>
+
+## week 34 -2020 🌸
 
 <a href='2020/week_34_plants_in_danger/plants_in_danger.R' target='_blank'><img src="2020/week_34_plants_in_danger/plants.png" align="center"/></a>
 
-## week 33 -2020 🏺
+## week 33 -2020 🏹
 
 <a href='2020/week_33/avatar.R' target='_blank'><img src="2020/week_33/avatar.png" align="center"/></a>
 

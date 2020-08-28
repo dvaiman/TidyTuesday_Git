@@ -180,7 +180,7 @@ ggplot(data = shopusa) +
        subtitle = "            USA according to the TV-serie Chopped: Map of contestants home state")
 
 # save
-ggsave(here("2020/week_35_chopped/", "chopped.png"),width = 32, height = 15.4, units = "cm", dpi = 300)
+ggsave(here("2020/week_35_chopped/", "chopped.png"),width = 32, height = 14.9, units = "cm", dpi = 300)
 
 
 
