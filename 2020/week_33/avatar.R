@@ -1,6 +1,9 @@
 # TidyTuesday
 # week 33 - Avatar The last airbender
 # Grapichs: Daniel Väisänen
+
+#libraries 
+
 library(here)
 library(tidyverse)
 library(tvthemes)
